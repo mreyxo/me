@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - x15</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html><html><head>
+<title>x15</title>
+  <link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+<script>
+$(document).ready(function(){
+   $('.video iframe').each(function(){
+   var scale = $(this).parents('.video').width() / 500;
+   $(this).attr({
+   width: Math.floor($(this).attr('width') * scale),
+   height: Math.floor($(this).attr('height') * scale)
+   });
+   });
+});
+</script>
+
+<script>
+   (function($){
+   $(document).ready(function(){
+   $("[title]").style_my_tooltips();
+   });
+   })(jQuery);
+</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://dl.dropbox.com/s/brdv4yv2iaigjmp/glenplayer07.js"></script>
+ 
+<style type="text/css">
+ 
+@font-face { font-family: "creo"; src: url('https://dl.dropboxusercontent.com/s/uk7fcayvza8gd9t/Creo-ExtraBold.ttf') ;}
+
+body{
+background-color: #ededed;
+font-family: 'Montserrat', sans-serif;
+color:#3c3c3c;
+letter-spacing:1px;
+color:#665588;
+font-size:9px;
+font-weight:500;
+}
+
+*, body, img { cursor:url(https://xatimg.com/image/dR7hjnRmqGWI.png), auto;}
+  
+a:link, a:active, a:visited{
+color: #92879a;
+text-decoration:none;
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+text-transform:uppercase;
+font-weight:bold;
+}
+ 
+a:hover {
+color:;
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+b,bold,strong{
+color:#665588;
+text-transform:uppercase;
+}
+
+em,i,italic{
+color:#a59eaa;
+}
+ 
+big{
+font-size:15px;
+font-family: 'Montserrat', sans-serif;
+}
+
+small,sup, sub{
+font-size:9px;
+}
+
+h1{font-family: "creo";
+padding:5px;
+letter-spacing:1px;
+padding:0px;
+text-align:center;
+font-size: 24px;
+text-transform:uppercase;
+line-height: 120%;
+color:#92879a;}
+
+h2{font-family: "creo";
+padding:5px;
+letter-spacing:1px;
+text-align:center;
+font-size: 28px;
+text-transform:uppercase;
+line-height: 120%;
+color:#cbbde7;}
+
+.posttitle{
+font-family: "creo";
+padding:5px;
+letter-spacing:1px;
+text-align:center;
+font-size: 32px;
+text-transform:uppercase;
+line-height: 120%;
+-webkit-text-stroke: 1px #665588;
+-webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+ 
+blockquote{
+margin-left:0px;
+padding-left:15px;
+border-left: 1px solid #665588;
+width:95%;
+}
+ 
+ 
+.p { padding-top: 5px;}
+.ol, ul { margin-left: 30px; padding: 5px; }
+.ul { list-style-type: square; }
+
+::-webkit-scrollbar-thumb {
+ display: none; 
+}
+ 
+::-webkit-scrollbar {
+ display: none; 
+}
+
+#s-m-t-tooltip {
+z-index: 999999999999999999;
+background: #fff;
+font-size: 8px;
+line-height: 13px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: #3c3c3c;
+font-weight:900;
+background-color:#f5f5f5;
+border:1px solid #e5e5e5;
+border-radius:5px;
+max-width: 150px;
+word-wrap: break-word;
+padding: 2px 5px 2px 6px;
+display: block;
+margin: 24px 14px 7px 12px;
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+::-moz-selection { background: #cbbde7; }
+::selection { background: #cbbde7; }
+
+#container {
+margin: auto;
+left:0px;
+top:-100px;
+bottom:0px;
+right:0px;
+position:absolute;
+width:570px;
+height:390px;
+overflow:auto;
+color:#3c3c3c;
+z-index:999;
+border-radius:10px;
+background-color:#f0f0f0;
+}
+
+
+#leftwindow{
+width:235px;
+height:275px;
+padding:0px;
+background-color:#f5f5f5;
+margin:auto;
+position:fixed;
+left:0px;
+top:230px;
+bottom:0px;
+right:300px;
+border-radius:15px;
+z-index:9999;
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+#leftwindow:hover{
+transform: scale(1.1);
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+#rightwindow{
+width:250px;
+height:375px;
+padding:0px;
+background-color:#f5f5f5;
+margin:auto;
+position:fixed;
+left:250px;
+top:230px;
+bottom:0px;
+right:0px;
+border-radius:15px;
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+#rightwindow img{
+width:210px;
+height:210px;
+border-radius:10px;
+margin-top:45px;
+margin-left:20px;
+}
+
+#rightwindow:hover{
+z-index:9999;
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+#stats{
+font-family:"creo";
+font-size:14px;
+position:fixed;
+margin-top:15px;
+margin-left:20px;
+color:#665588;
+width:210px;
+text-align:center;
+word-spacing:0px;
+overflow:hidden;
+letter-spacing:2.5px;
+font-weight:bold;
+}
+ 
+ 
+.blinking{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #665588;    }
+    49%{    color: #665588; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #665588;    }
+}
+
+
+#sideimage {position:fixed; width:200px; height:150px;  margin:18px;display:block; background-color:#cbbde7; border-radius:10px;}
+ 
+#sideimage img {width:200px; height:200px; position:fixed; margin-top:-50px;}
+ 
+.description {width:200px; height:50px; line-height:200%; margin-top:180px; margin-left:18px; display:block; font-size:10px; overflow:hidden; }
+
+#browserbig{
+background-color:#665588;
+padding:5px;
+width:auto;
+border-radius:15px 15px 0px 0px;
+}
+
+.dots{
+font-size:10px;
+margin:5px;
+color:#f5f5f5;
+}
+
+.comp{
+font-size:10px;
+margin:5px; text-align:right;}
+
+
+@import "compass/css3";
+
+.wave1fill{
+ fill:#cbbde7; 
+ width: 830px;
+ height:670px;
+}
+
+
+#wave1{
+margin:auto;
+right:0px;
+top:0px;
+left:0px;
+bottom:0px;
+width: 830px;
+height:670px;
+overflow: hidden;
+position:fixed;
+}
+
+.wave2fill{
+ fill: transparent;
+ stroke: #a59eaa;
+ stroke-width:1.5px;
+ width: 830px;
+ height:670px;
+}
+
+
+#wave2{
+margin:auto;
+right:0px;
+top:0px;
+left:0px;
+bottom:0px;
+width: 830px;
+height:670px;
+overflow: hidden;
+position:fixed;
+transform:rotate(5deg);
+}
+
+ 
+#maintitle{
+font-family:"creo";
+font-size:74px;
+position:fixed;
+margin:auto;
+left:0px;
+right:440px;
+bottom:0px;
+top:-180px;
+width:300px;
+height:250px;
+text-align:right;
+word-spacing:-3px;
+line-height:100%;
+padding:10px;
+z-index:99999999999999999999999;
+-webkit-text-stroke:1.5px #665588;
+-webkit-text-fill-color: rgba(0, 0, 0, 0);
+text-shadow:3px 3px #f5f5f5;
+}
+
+
+#notif{
+position:fixed;
+top:-520px;
+right:0px;
+left:140px;
+bottom:0px;
+margin:auto;
+border-radius:15px;
+width:240px;
+height:50px;
+padding:10px;
+background-color:#f5f5f5;
+line-height:150%;
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+z-index:999999999999999999;
+  animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;}
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    55%  { transform: translate(0, 10px); }
+    to   { transform: translate(0, -0px); }
+} 
+
+#notif img{
+width:50px;
+height:50px;
+border-radius:50%;
+float:left;
+margin-right:10px;
+}
+
+#notif a{
+font-weight:bold;
+}
+
+#notif:hover{
+transform: scale(1.1);
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+#spotify{
+position:fixed;
+top:-350px;
+right:0px;
+left:360px;
+bottom:0px;
+margin:auto;
+border-radius:15px;
+width:200px;
+height:68px;
+background-color:#f5f5f5;
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+z-index:999999999999999999;
+}
+
+#spotify:hover{
+transform: scale(1.1);
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+
+ol.notes {
+width:350px;
+padding: 0px;
+margin: 0px 0px;
+list-style-type: none;
+margin-left:95px;
+margin-top:-10px;
+font-size:9px;}
+
+ol.notes li.note {
+padding: 10px;
+}
+
+ol.notes li.note img.avatar {
+vertical-align: -4px;
+margin-right: 10px;
+width: 16px;
+height: 16px;
+}
+
+ol.notes li.note .answer_content {
+font-weight: normal;
+}
+
+ol.notes li.note blockquote {
+border-color: #f5f5f5;
+padding: 4px 10px;
+margin: 10px 0px 0px 25px;
+}
+
+ol.notes li.note blockquote a {
+text-decoration: none;}
+ 
+
+#bar{
+position:fixed;
+top:585px;
+bottom:0px;
+right:0px;
+left:0px;
+margin: auto;
+width:220px;
+height:15px;
+border-radius:8px;
+background-color:#e5e5e5;
+z-index:9999999999999999999999999999999;
+}
+
+#sidelink{
+position:fixed;
+width:280px;
+height:100px;
+margin-left:15px;
+margin-top:15px;
+z-index:999999999999999999999999999;
+text-align:left;
+}
+
+#sidelink span{
+width:25px;
+height:25px;
+border-radius:15px;
+background-color:#665588;
+color:#f5f5f5;
+font-size:25px;
+float:left;
+padding:10px;
+text-align:center;
+margin:5px;
+}
+ 
+#sidelink a:hover span{
+transform: scale(1.2);
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+#credits{
+position:fixed;
+bottom:10px;
+right:15px;
+width:36px;
+height:36px;
+text-align:center;
+}
+
+#credits a{
+font-weight:bold;
+font-family:"creo";
+width:36px;
+height:36px;
+padding:0px;
+display:inline-block;
+-webkit-text-fill-color: #f5f5f5;
+background-color:#cbbde7;
+font-size:18px;
+border-radius:50%;
+
+}
+
+#credits span{
+padding:5px;
+padding-top:10px;
+padding-right:5px;
+}
+
+#credits a:hover{
+font-family:"creo";
+}
+
+.pulse a:hover{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;   
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3);
+  100% { transform: scale(1); }
+  }
+}  
+
+:root {
+   --Circle-Size:50px;
+   --Progress-Border-Size:2px;
+   --Progress-Empty:#eee;
+   --Progress-Fill:#665588;
+   --Player-Background:#cbbde7;
+   --Play-Pause-Buttons-Size:20px;
+   --Play-Pause-Buttons-Color:#fff;
+   --Player-Text-Margin:9.5px;
+
+   --Song-Name-Font-Size:9.5px;
+   --Song-Name-Color:#cbbde7;
+
+   --Artist-Name-Font-Size:9.5px;
+   --Artist-Name-Color:#665588;
+}
+
+#glenplayer07 {
+position:absolute;
+margin-top:10px;
+margin-left:10px;
+   z-index:99;
+}
+
+.flamingo {
+   display:flex;
+   align-items:center;
+}
+
+.circleofdeath {
+   width:var(--Circle-Size);
+   height:var(--Circle-Size);
+   border-radius:100%;
+   overflow:hidden;
+}
+
+.tinfoil {
+   width:var(--Circle-Size);
+   height:var(--Circle-Size);
+   background:var(--Progress-Empty);
+   border-radius:100%;
+}
+
+.oven {
+   background:var(--Progress-Fill);
+}
+
+.oliveoil {
+   width:100%;
+   height:100%;
+}
+
+.crust {
+   position:absolute;
+   top:0;
+   display:flex;
+   align-items:center;
+   justify-content:center;
+   width:var(--Circle-Size);
+   height:var(--Circle-Size);
+}
+
+.cherry {
+   display:flex;
+   align-items:center;
+   justify-content:center;
+   width:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
+   height:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
+   background:var(--Player-Background);
+   border-radius:100%;
+   cursor:pointer;
+   z-index:1;
+}
+
+.music-controls .material-icons {
+   font-size:var(--Play-Pause-Buttons-Size);
+   color:var(--Play-Pause-Buttons-Color);
+}
+
+.pausee {display:none;}
+
+.beff {display:none;}
+.aff {display:block;}
+
+.music-info {
+   margin-left:var(--Player-Text-Margin);
+   line-height:1em;
+}
+
+.song-name {
+   font-family: 'Montserrat', sans-serif;
+   font-size:var(--Song-Name-Font-Size);
+   text-transform:uppercase;
+   font-weight:bold;
+   color:#92879a;
+   color:var(--Song-Name-Color);
+}
+
+.artist-name {
+   margin-top:3px;
+   font-family: 'Montserrat', sans-serif;
+   font-size:var(--Artist-Name-Font-Size);
+   letter-spacing:0.3px;
+   color:var(--Artist-Name-Color);
+}
+
+</style>
+</head>
+ 
+<body>
+<div id="maintitle">poniko
+  ♡
+</div>
+
+
+<div id="wave1">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 848.17 682.02" xml:space="preserve" class="wave1fill">
+<path class="cls-1" d="M2.09,341.32s13-78,68.78-109.52c40.65-23,87.23-36.22,131.83-52.65s72.26-39.74,95.73-77.4c9.13-14.66,16.9-36.89,26.62-51.24C354.39,7.16,434.36-4,489.11,9.18S587.65,61,614,105.84c18.86,32,29.92,67.21,45.45,100.64s36.7,66.32,70,86.91c23.77,14.69,52.64,22.43,74.5,39.32,36.85,28.49,45.66,76.19,46.06,119.73.33,35.18-3.55,71.3-20.78,102.93-19.29,35.41-53.68,63-92.07,82.39-110.55,55.72-258.74,52-362.63,43-64.37-5.52-128.27-7.39-188.23-29S71.19,593.93,39.66,543.48c-37.75-60.4-38.4-133-37.57-202.16" transform="translate(-1.91 -3.99)"/></svg>
+</div>
+
+<div id="wave2">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 848.17 682.02" xml:space="preserve" class="wave2fill">
+<path class="cls-1" d="M2.09,341.32s13-78,68.78-109.52c40.65-23,87.23-36.22,131.83-52.65s72.26-39.74,95.73-77.4c9.13-14.66,16.9-36.89,26.62-51.24C354.39,7.16,434.36-4,489.11,9.18S587.65,61,614,105.84c18.86,32,29.92,67.21,45.45,100.64s36.7,66.32,70,86.91c23.77,14.69,52.64,22.43,74.5,39.32,36.85,28.49,45.66,76.19,46.06,119.73.33,35.18-3.55,71.3-20.78,102.93-19.29,35.41-53.68,63-92.07,82.39-110.55,55.72-258.74,52-362.63,43-64.37-5.52-128.27-7.39-188.23-29S71.19,593.93,39.66,543.48c-37.75-60.4-38.4-133-37.57-202.16" transform="translate(-1.91 -3.99)"/></svg>
+</div>
+
+<div id="notif">
+<img src="https://i.ibb.co/pP6FHs0/nozot.png" draggable="false">
+<b>@ poniko • tan</b><br/>
+~ <a>sick</a> of y'all <span class="th th-heart-1-o">
+</div>
+
+<div id="spotify">
+
+<div id="glenplayer07">
+<div class="flamingo">
+<div class="circleofdeath">
+<div class="tinfoil">
+<div class="oliveoil"></div>
+</div>
+<div class="crust">
+<div class="cherry">
+<div class="music-controls">
+<i class="material-icons playy">play_arrow</i>
+<i class="material-icons pausee">pause</i>
+</div>
+</div>
+</div>
+</div>
+
+<div class="music-info">
+<div class="song-name">Pipo Pipo</div>
+<div class="artist-name">Serani Poji</div>
+</div>
+</div>
+</div>
+
+<audio id="audio" src="assets/PipoPipo.mp3" type="audio"></audio>
+
+  
+</div>
+
+<div id="leftwindow">
+<div id="browserbig">
+<div class="dots">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+</div></div>
+<div id="sideimage"><img src="https://i.ibb.co/xCrY2Qk/nozomii.png" draggable="false"></div>
+  <div class="description">~ <b>Bunny person</b><BR> 🐰💕 • Disturbed character
+
+<script language="JavaScript">var fhs = document.createElement('script');var fhs_id = "5630069";
+var ref = (''+document.referrer+'');var pn =  window.location;var w_h = window.screen.width + " x " + window.screen.height;
+fhs.src = "//freehostedscripts.net/ocounter.php?site="+fhs_id+"&e1=%&e2=%&r="+ref+"&wh="+w_h+"&a=1&pn="+pn+"";
+document.head.appendChild(fhs);document.write("<span id='o_"+fhs_id+"'></span>");
+</script></div>
+</div>
+<div id="rightwindow">
+<div id="browserbig">
+<div class="dots">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+</div></div>
+<div id="stats">
+<span class="blinking">p y o n!</span>
+</div>
+<img src="https://i.ibb.co/6D6rXdm/tojonozo.png" draggable="false">
+<div id="sidelink">
+<a><span class=""></span></a>
+<a><span class=""></span></a>
+<a><span class=""></span></a>
+<a><span class=""></span></a>
+</div></div></div>
+  
+<div id="credits">
+<div class="pulse">
+<a target="_blank" href="https://xat.me/birdy" title="by mar">
+<span class="th th-heart-1-o"></a></div></div>
+</body></html>
+<!-- partial -->
+  
+</body>
+</html>
